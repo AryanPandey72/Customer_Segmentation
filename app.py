@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from rfm_analysis import generate_segments # <-- Import your logic
+from customer_segmentation_clustering import generate_segments # <-- This now correctly imports from your file
 
 # --- Page Configuration ---
 st.set_page_config(
