@@ -94,5 +94,4 @@ if uploaded_file is not None:
 
 else:
     st.info("Please upload your 'Online Retail.xlsx' file in the sidebar to begin.")
-    st.image("https://i.imgur.com/2s4f2Rz.png", caption="Example Power BI Dashboard", use_column_width=True)
 
