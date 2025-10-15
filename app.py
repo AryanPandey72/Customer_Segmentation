@@ -24,12 +24,9 @@ def load_data_from_upload(uploaded_file):
 
 @st.cache_data
 def load_sample_data(file_path):
-    """Loads sample data from a local CSV file within the repository."""
+    """Loads sample data from a local Excel file within the repository."""
     try:
-        # This dataset is known to have encoding issues.
-        df = pd.read_csv(file_path, encoding='ISO-8859-1')
-        # Ensure the InvoiceDate is in the correct format
-        df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
+        df = pd.read_excel(file_path, sheet_name='Online Retail')
         return df
     except FileNotFoundError:
         st.error(f"Sample data file '{file_path}' not found. Make sure it is in your GitHub repository.")
@@ -56,7 +53,8 @@ with st.sidebar:
 # --- Main Dashboard ---
 st.title("RFM Analysis and Customer Segmentation")
 
-SAMPLE_DATA_FILE = 'Online Retail.xlsx - Online Retail.csv'
+# Corrected to use the Excel file directly
+SAMPLE_DATA_FILE = 'Online Retail.xlsx'
 
 df_to_process = None
 
